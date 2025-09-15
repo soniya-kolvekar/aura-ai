@@ -1,0 +1,143 @@
+/* src/SignIn.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+:root{ --purple-start:#7b2cbf; --purple-end:#9a57f8; --card-bg: rgba(12,12,13,0.9); --muted:#bdbdbd; }
+
+.page-wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+.form-center{
+  width:520px;
+  max-width:92%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.logo{
+  font-size:36px;
+  color:#8a3be2;
+  margin-bottom:14px;
+  font-weight:700;
+}
+
+/* Outer card */
+.card{
+  width:100%;
+  background: var(--card-bg);
+  border-radius:28px;
+  padding:34px 36px;
+  border:2px solid rgba(140,75,200,0.45);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Title */
+.card-title{
+  font-size:36px;
+  text-align:center;
+  margin-bottom:18px;
+  color: #fff;
+  font-weight:800;
+}
+
+/* Input wrapper */
+.input-wrap{
+  display:block;
+  position:relative;
+  margin:12px 0;
+}
+
+/* left icon */
+.left-icon{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  display:inline-block;
+  pointer-events:none;
+}
+
+/* actual input */
+.text-input{
+  width:100%;
+  padding:14px 16px 14px 48px;
+  border-radius:30px;
+  border:none;
+  background: #d0d0d0; /* grey */
+  color:#222;
+  font-size:16px;
+  outline:none;
+}
+
+/* placeholder color */
+.text-input::placeholder{
+  color: #8f8f8f;
+  font-weight:500;
+}
+
+/* forgot */
+.forgot{
+  text-align:right;
+  color: var(--muted);
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* or */
+.or{
+  text-align:center;
+  color:#bdbdbd;
+  margin:12px 0;
+  font-size:14px;
+}
+
+/* google btn */
+.google-btn{
+  width:100%;
+  border-radius:26px;
+  padding:10px 12px;
+  background:#eee;
+  color:#222;
+  border:none;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+/* action */
+.action-btn{
+  width:120px;
+  display:block;
+  margin: 8px auto 0;
+  padding:8px 18px;
+  border-radius:20px;
+  background: linear-gradient(90deg,var(--purple-start),var(--purple-end));
+  color:white;
+  border:none;
+  font-weight:700;
+}
+
+/* footer */
+.foot-note{
+  margin-top:14px;
+  text-align:center;
+  color:#cfcfcf;
+}
+
+/* link */
+.link{ color: #caa6ff; text-decoration:none; font-weight:600; }
+
+/* responsive */
+@media (max-width:520px){
+  .form-center{ width:94%; }
+  .card-title{ font-size:28px; }
+  .logo{ font-size:28px; }
+  .text-input{ font-size:15px; }
+}

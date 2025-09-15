@@ -1,0 +1,91 @@
+/* src/Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+.page-wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* Centered "card" width — keeps app-like look but centered on desktop */
+.center-card{
+  width:420px;
+  max-width:90%;
+  text-align:center;
+  padding:28px 22px 48px;
+  background: transparent; /* we keep background transparent to show rose */
+}
+
+/* logo heading inside the card (not a separate header bar) */
+.center-card .logo{
+  font-size:48px;
+  color: #8a3be2; /* purple */
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+/* tagline smaller, muted white/grey */
+.center-card .tagline{
+  color: #e8e7e7;
+  font-size:16px;
+  margin-bottom:22px;
+}
+
+/* GET STARTED */
+.get-started{
+  font-size:46px;
+  color: #bfa0ff;
+  margin:18px 0;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+/* Buttons column */
+.btn-column{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+}
+
+/* pill buttons */
+.pill-btn{
+  width:260px;
+  max-width:80%;
+  padding:12px 28px;
+  border-radius:40px;
+  font-size:20px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transition: transform .12s ease, opacity .12s ease;
+  border: none;
+}
+
+/* filled gradient */
+.pill-btn.big{
+  background: linear-gradient(90deg, var(--purple-start), var(--purple-end));
+  color: #fff;
+}
+
+/* outline variant */
+.pill-btn.outline{
+  background: linear-gradient(180deg, rgba(12,12,13,0.7), rgba(8,8,8,0.45));
+  color: #eae5f9;
+  border: 2px solid rgba(140,75,200,0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* hover */
+.pill-btn:hover{ transform: translateY(-2px); opacity: .98; }
+
+/* Responsiveness - scale down for small screens */
+@media (max-width:480px){
+  .center-card .logo{ font-size:36px; }
+  .get-started{ font-size:34px; }
+  .pill-btn{ font-size:18px; width:200px; padding:10px 20px; }
+}
