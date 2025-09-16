@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aura.ai Chatbot</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #1e002e 0%, #000000 100%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            color: #a460cc;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .header-title {
+            font-size: 3em;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 40px;
+        }
+
+        .header-icons img {
+            width: 40px;
+            height: 40px;
+            background: rgb(246, 245, 245);
+            border-radius: 50%;
+            padding: 8px;
+            filter: invert(100%) brightness(100%);
+            cursor: pointer;
+        }
+
+        .chat-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .response-area {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ddd;
+            min-height: 80px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .chat-input {
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            padding-right: 60px;
+            font-size: 1.1em;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .chat-input input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .send-icon {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #2b282c;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .send-icon img {
+            width: 28px;
+            filter: invert(100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-icons">
+                <img src="https://static.vecteezy.com/system/resources/previews/010/390/540/original/circle-arrow-icon-circle-arrow-icon-illustration-free-vector.jpg" alt="Refresh" onclick="refreshPage()">
+            </div>
+            <div class="header-title">Aura.ai</div>
+            <div class="header-icons">
+                <img src="https://as2.ftcdn.net/v2/jpg/01/07/72/05/1000_F_107720590_rnFjju5YCUTa5OngF2AnDt2nAOFhiQdP.jpg" alt="Settings" onclick="openRecentSearches()">
+            </div>
+        </div>
+
+        <div class="chat-main">
+            Hello User
+            <div class="response-area" id="responseArea"></div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask me anything..."/>
+            <div class="send-icon" onclick="submitQuery()">
+                <img src="https://cdn4.iconfinder.com/data/icons/core-ui-filled-rounded/32/filled_rounded_send-512.png" alt="Send"/>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function refreshPage() {
+            document.getElementById('userInput').value = '';
+            document.getElementById('responseArea').textContent = '';
+        }
+
+        function openRecentSearches() {
+            window.location.href = 'recent-searches.html';
+        }
+
+        function submitQuery() {
+            const input = document.getElementById('userInput');
+            const responseArea = document.getElementById('responseArea');
+            const query = input.value.trim();
+
+            if (query === '') {
+                responseArea.textContent = "Please type a question.";
+                return;
+            }
+
+            // Simulated AI response
+            responseArea.textContent = `You asked: "${query}". Here's a useful health tip: Stay hydrated, exercise regularly, and maintain a balanced diet.`;
+
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
