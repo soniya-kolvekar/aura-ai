@@ -1,22 +1,53 @@
 
-:root{
+/* App.css */
+:root {
   --purple-start: #7b2cbf;
   --purple-end: #9a57f8;
   --card-bg: rgba(12,12,13,0.85);
-  --input-bg: #cfcfcf; /* grey input bg like design */
+  --input-bg: #cfcfcf;
   --placeholder: #8f8f8f;
   --text-white: #f7f7f7;
   --muted: #c9c6c6;
   --rose-image: "/images/rose.jpg";
   font-family: 'Poppins', Arial, sans-serif;
 }
-html,body,#root{
-  height:100%;
-  margin:0;
-  padding:0;
-  background: #000;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* only landing page */
+.temp-landing{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  background: #000; /* scoped, no longer global */
   color: var(--text-white);
 }
+
+.temp-title {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.temp-btn {
+  background: linear-gradient(90deg, var(--purple-start), var(--purple-end));
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 body{
   background-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%), url();
   background-position: center bottom;
@@ -24,29 +55,4 @@ body{
   background-repeat: no-repeat;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-}
-
-/* temporary landing page styles */
-.temp-landing{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:20px;
-  text-align:center;
-}
-.temp-title{
-  color:var(--text-white);
-  font-weight:700;
-  font-size:28px;
-}
-.temp-btn{
-  background: linear-gradient(90deg,var(--purple-start),var(--purple-end));
-  border:none;
-  color:white;
-  padding:12px 22px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
 }
