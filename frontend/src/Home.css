@@ -1,91 +1,92 @@
-/* src/Home.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
-
-.page-wrap{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px 20px;
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  background: url("rose.png") no-repeat center center/cover;
+  position: relative;
+  color: white;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* Centered "card" width — keeps app-like look but centered on desktop */
-.center-card{
-  width:420px;
-  max-width:90%;
-  text-align:center;
-  padding:28px 22px 48px;
-  background: transparent; /* we keep background transparent to show rose */
+/* Overlay */
+.page-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-/* logo heading inside the card (not a separate header bar) */
-.center-card .logo{
-  font-size:48px;
-  color: #8a3be2; /* purple */
-  font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:12px;
+/* Center card block */
+.center-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* keeps text + buttons aligned center */
+  justify-content: center;
+  max-width: 600px;      /* optional, so it doesn’t stretch */
+  margin: 0 auto;        /* ensure horizontal centering */
+  text-align: center;
 }
 
-/* tagline smaller, muted white/grey */
-.center-card .tagline{
-  color: #e8e7e7;
-  font-size:16px;
-  margin-bottom:22px;
+/* Logo / Title */
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a259ff;
+  margin-bottom: 10px;
 }
 
-/* GET STARTED */
-.get-started{
-  font-size:46px;
-  color: #bfa0ff;
-  margin:18px 0;
-  letter-spacing:2px;
-  font-weight:800;
+/* Tagline */
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #bbb;
 }
 
-/* Buttons column */
-.btn-column{
-  margin-top:10px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  align-items:center;
+/* Heading */
+.get-started {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #a259ff;
 }
 
-/* pill buttons */
-.pill-btn{
-  width:260px;
-  max-width:80%;
-  padding:12px 28px;
-  border-radius:40px;
-  font-size:20px;
-  font-weight:600;
-  cursor:pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  transition: transform .12s ease, opacity .12s ease;
+/* Buttons container */
+.btn-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Common button style */
+.pill-btn {
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 200px;
+  transition: 0.3s;
   border: none;
 }
 
-/* filled gradient */
-.pill-btn.big{
-  background: linear-gradient(90deg, var(--purple-start), var(--purple-end));
-  color: #fff;
+/* Filled button */
+.pill-btn.big {
+  background: linear-gradient(90deg, #a259ff, #6a0dad);
+  color: white;
 }
 
-/* outline variant */
-.pill-btn.outline{
-  background: linear-gradient(180deg, rgba(12,12,13,0.7), rgba(8,8,8,0.45));
-  color: #eae5f9;
-  border: 2px solid rgba(140,75,200,0.4);
-  backdrop-filter: blur(4px);
-}
-
-/* hover */
-.pill-btn:hover{ transform: translateY(-2px); opacity: .98; }
-
-/* Responsiveness - scale down for small screens */
-@media (max-width:480px){
-  .center-card .logo{ font-size:36px; }
-  .get-started{ font-size:34px; }
-  .pill-btn{ font-size:18px; width:200px; padding:10px 20px; }
+/* Outline button */
+.pill-btn.outline {
+  background: #111;
+  color: white;
+  border: 1px solid #a259ff;
 }
